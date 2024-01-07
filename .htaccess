@@ -1,0 +1,12 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine on
+  #
+  # stuff to let through (ignore)
+  RewriteCond %{REQUEST_URI} "/zoom/" [OR]
+  RewriteCond %{REQUEST_URI} "/zoom/"
+  RewriteRule (.*) $1 [L]
+  #</IfModule>
+</IfModule>
+Options +SymLinksIfOwnerMatch
+RewriteEngine On
+RewriteRule ^ server.php [L]
