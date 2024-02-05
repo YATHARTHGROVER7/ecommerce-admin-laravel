@@ -8,12 +8,12 @@ $settingData = App\Models\CsThemeAdmin::where('id', 1)->first();
         <meta charset="utf-8" />
         <title>{{env('APP_NAME')}}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+        <meta content="Not Premium Multipurpose Admin & Dashboard Template" name="description" />
         <meta content="Themesdesign" name="author" />
         <link rel="shortcut icon" href="@if(isset($settingData->favicon) && $settingData->favicon!=''){{env('SETTING_IMAGE')}}/{{$settingData->favicon}}@else{{env('NO_IMAGE')}}@endif" />
-        <link href="{{asset('public/backend_assets/assets/css/bootstrap.min.css')}}" id="bootstrap-style" rel="stylesheet" type="text/css" />
-        <link href="{{asset('public/backend_assets/assets/css/icons.min.css')}}" rel="stylesheet" type="text/css" />
-        <link href="{{asset('public/backend_assets/assets/css/app.min.css')}}" id="app-style" rel="stylesheet" type="text/css" />
+        <link href="{{asset('backend_assets/assets/css/bootstrap.min.css')}}" id="bootstrap-style" rel="stylesheet" type="text/css" />
+        <link href="{{asset('backend_assets/assets/css/icons.min.css')}}" rel="stylesheet" type="text/css" />
+        <link href="{{asset('backend_assets/assets/css/app.min.css')}}" id="app-style" rel="stylesheet" type="text/css" />
     </head>
     <body class="auth-body-bg">
         <div>
@@ -36,12 +36,12 @@ $settingData = App\Models\CsThemeAdmin::where('id', 1)->first();
                 </div>
             </div>
         </div>
-        <script src="{{asset('public/backend_assets/assets/libs/jquery/jquery.min.js')}}"></script>
-        <script src="{{asset('public/backend_assets/assets/libs/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-        <script src="{{asset('public/backend_assets/assets/libs/metismenu/metisMenu.min.js')}}"></script>
-        <script src="{{asset('public/backend_assets/assets/libs/simplebar/simplebar.min.js')}}"></script>
-        <script src="{{asset('public/backend_assets/assets/libs/node-waves/waves.min.js')}}"></script>
+        <script src="{{asset('backend_assets/assets/libs/jquery/jquery.min.js')}}"></script>
+        <script src="{{asset('backend_assets/assets/libs/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+        <script src="{{asset('backend_assets/assets/libs/metismenu/metisMenu.min.js')}}"></script>
+        <script src="{{asset('backend_assets/assets/libs/simplebar/simplebar.min.js')}}"></script>
+        <script src="{{asset('backend_assets/assets/libs/node-waves/waves.min.js')}}"></script>
 
-        <script src="{{asset('public/backend_assets/assets/js/app.js')}}"></script>
+        <script src="{{asset('backend_assets/assets/js/app.js')}}"></script>
     </body>
 </html>

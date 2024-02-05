@@ -25,16 +25,16 @@ $value['order_details'] = implode(',',$orderDetails);
         <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
         <meta content="Themesdesign" name="author" />
         <link rel="shortcut icon" href="@if(isset($settingData->favicon) && $settingData->favicon!=''){{env('SETTING_IMAGE')}}/{{$settingData->favicon}}@else{{url('/')}}/public{{env('NO_IMAGE')}}@endif" />
-        <link href="{{asset('public/backend_assets/assets/libs/select2/css/select2.min.css')}}" rel="stylesheet" type="text/css" />
-        <link href="{{asset('public/backend_assets/assets/libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.css')}}" rel="stylesheet" type="text/css" />
-        <link href="{{asset('public/backend_assets/assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css')}}" rel="stylesheet" type="text/css" />
-        <link href="{{asset('public/backend_assets/assets/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css')}}" rel="stylesheet" type="text/css" />
-        <link href="{{asset('public/backend_assets/assets/css/bootstrap.min.css')}}" id="bootstrap-style" rel="stylesheet" type="text/css" />
-        <link href="{{asset('public/backend_assets/assets/css/icons.min.css')}}" rel="stylesheet" type="text/css" />
-        <link href="{{asset('public/backend_assets/assets/css/app.min.css')}}" id="app-style" rel="stylesheet" type="text/css" />
-        <link href="{{asset('public/backend_assets/assets/css/dragula.min.css')}}" rel="stylesheet" type="text/css" />
-        <link href="{{asset('public/backend_assets/assets/css/ext-component-drag-drop.css')}}" rel="stylesheet" type="text/css" />
-        <script src="{{asset('public/backend_assets/assets/libs/jquery/jquery.min.js')}}"></script>
+        <link href="{{asset('backend_assets/assets/libs/select2/css/select2.min.css')}}" rel="stylesheet" type="text/css" />
+        <link href="{{asset('backend_assets/assets/libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.css')}}" rel="stylesheet" type="text/css" />
+        <link href="{{asset('backend_assets/assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css')}}" rel="stylesheet" type="text/css" />
+        <link href="{{asset('backend_assets/assets/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css')}}" rel="stylesheet" type="text/css" />
+        <link href="{{asset('backend_assets/assets/css/bootstrap.min.css')}}" id="bootstrap-style" rel="stylesheet" type="text/css" />
+        <link href="{{asset('backend_assets/assets/css/icons.min.css')}}" rel="stylesheet" type="text/css" />
+        <link href="{{asset('backend_assets/assets/css/app.min.css')}}" id="app-style" rel="stylesheet" type="text/css" />
+        <link href="{{asset('backend_assets/assets/css/dragula.min.css')}}" rel="stylesheet" type="text/css" />
+        <link href="{{asset('backend_assets/assets/css/ext-component-drag-drop.css')}}" rel="stylesheet" type="text/css" />
+        <script src="{{asset('backend_assets/assets/libs/jquery/jquery.min.js')}}"></script>
         <script>
             var site_url = "{{env('ADMIN_URL')}}";
             var _token = "{{ csrf_token() }}";
@@ -447,28 +447,28 @@ $value['order_details'] = implode(',',$orderDetails);
                 @yield('content')
             </div>
         </div>
-        <script src="{{asset('public/backend_assets/assets/libs/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-        <script src="{{asset('public/backend_assets/assets/libs/metismenu/metisMenu.min.js')}}"></script>
-        <script src="{{asset('public/backend_assets/assets/libs/simplebar/simplebar.min.js')}}"></script>
-        <script src="{{asset('public/backend_assets/assets/libs/node-waves/waves.min.js')}}"></script>
-        <script src="{{asset('public/backend_assets/assets/libs/select2/js/select2.min.js')}}"></script>
-        <script src="{{asset('public/backend_assets/assets/libs/spectrum-colorpicker2/spectrum.min.js')}}"></script>
-        <script src="{{asset('public/backend_assets/assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js')}}"></script>
-        <script src="{{asset('public/backend_assets/assets/libs/bootstrap-maxlength/bootstrap-maxlength.min.js')}}"></script>
-        <script src="{{asset('public/backend_assets/assets/js/pages/form-advanced.init.js')}}"></script>
-        <script src="{{asset('public/backend_assets/assets/js/app.js')}}"></script>
+        <script src="{{asset('backend_assets/assets/libs/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+        <script src="{{asset('backend_assets/assets/libs/metismenu/metisMenu.min.js')}}"></script>
+        <script src="{{asset('backend_assets/assets/libs/simplebar/simplebar.min.js')}}"></script>
+        <script src="{{asset('backend_assets/assets/libs/node-waves/waves.min.js')}}"></script>
+        <script src="{{asset('backend_assets/assets/libs/select2/js/select2.min.js')}}"></script>
+        <script src="{{asset('backend_assets/assets/libs/spectrum-colorpicker2/spectrum.min.js')}}"></script>
+        <script src="{{asset('backend_assets/assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js')}}"></script>
+        <script src="{{asset('backend_assets/assets/libs/bootstrap-maxlength/bootstrap-maxlength.min.js')}}"></script>
+        <script src="{{asset('backend_assets/assets/js/pages/form-advanced.init.js')}}"></script>
+        <script src="{{asset('backend_assets/assets/js/app.js')}}"></script>
         <script src="https://cdn.ckeditor.com/4.12.1/full-all/ckeditor.js"></script>
-        <script src="{{asset('public/backend_assets/assets/js/pages/ext-component-drag-drop.js')}}"></script>
-        <script src="{{asset('public/backend_assets/assets/js/pages/dragula.min.js')}}"></script>
+        <script src="{{asset('backend_assets/assets/js/pages/ext-component-drag-drop.js')}}"></script>
+        <script src="{{asset('backend_assets/assets/js/pages/dragula.min.js')}}"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
-        <script src="{{asset('public/backend_assets/assets/libs/datatables.net/js/jquery.dataTables.min.js')}}"></script>
-        <script src="{{asset('public/backend_assets/assets/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js')}}"></script>
-        <script src="{{asset('public/backend_assets/assets/libs/datatables.net-responsive/js/dataTables.responsive.min.js')}}"></script>
-        <script src="{{asset('public/backend_assets/assets/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js')}}"></script>
-        <script src="{{asset('public/backend_assets/assets/libs/apexcharts/apexcharts.min.js')}}"></script>
-        <script src="{{asset('public/backend_assets/assets/libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.min.js')}}"></script>
-        <script src="{{asset('public/backend_assets/assets/libs/admin-resources/jquery.vectormap/maps/jquery-jvectormap-us-merc-en.js')}}"></script>
-        <script src="{{asset('public/backend_assets/assets/js/pages/dashboard.init.js')}}"></script>
+        <script src="{{asset('backend_assets/assets/libs/datatables.net/js/jquery.dataTables.min.js')}}"></script>
+        <script src="{{asset('backend_assets/assets/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js')}}"></script>
+        <script src="{{asset('backend_assets/assets/libs/datatables.net-responsive/js/dataTables.responsive.min.js')}}"></script>
+        <script src="{{asset('backend_assets/assets/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js')}}"></script>
+        <script src="{{asset('backend_assets/assets/libs/apexcharts/apexcharts.min.js')}}"></script>
+        <script src="{{asset('backend_assets/assets/libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.min.js')}}"></script>
+        <script src="{{asset('backend_assets/assets/libs/admin-resources/jquery.vectormap/maps/jquery-jvectormap-us-merc-en.js')}}"></script>
+        <script src="{{asset('backend_assets/assets/js/pages/dashboard.init.js')}}"></script>
         <script type="text/javascript">
             CKEDITOR.replace(".ckeditor");
             CKEDITOR.config.allowedContent = true;
