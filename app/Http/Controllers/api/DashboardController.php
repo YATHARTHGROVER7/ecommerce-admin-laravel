@@ -1285,7 +1285,7 @@ class DashboardController extends Controller
 					$details = [
 					'subject' => 'Your Order has been cancelled !',
 					'name' => $rowUserData->user_fname,
-					'order_no' => $rowOrderData->,
+					// 'order_no' => $rowOrderData->,
 					'template' =>'frontend.email.order_cancel',
 					];
 

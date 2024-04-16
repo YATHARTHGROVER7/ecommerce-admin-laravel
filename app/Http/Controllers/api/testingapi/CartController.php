@@ -971,8 +971,60 @@ class CartController extends Controller
             if($tempTransObj->save())
             {
                 $rowTempTransData = CsTempTransactions::where('temp_trans_id',$tempTransObj->temp_trans_id)->first();
-                $production_url= env('APP_URL').'pay-u-money-view/'.$rowTempTransData->temp_trans_order_id;
-                return response()->json(['status' => 'success','message' => 'Order created successfully','production_url' => $production_url],200);
+
+                $payload = [
+                    'merchantId' => 'PGTESTPAYUAT',
+                    'merchantTransactionId' => 'TXN12345678123',
+                    'amount' => '100',
+                    'merchantUserId' => 'utp123456789',
+                    'redirectUrl' => 'http://localhost:3029/checkout',
+                    'redirectMode' => 'REDIRECT',
+                    'callbackUrl' => 'http://localhost:3029/checkout',
+                    "mobileNumber"=> "7742415639",
+                    'paymentInstrument' => [
+                        'type' => 'PAY_PAGE',
+                    ],
+                ];
+        
+                $encode = base64_encode(json_encode($payload));
+
+                $string = $encode . '/pg/v1/pay' . '099eb0cd-02cf-4e2a-8aca-3e6c6aff0399';
+                $sha256 = hash('sha256', $string);
+                $finalXHeader = $sha256 . '###' . '1';
+        
+                $curl = curl_init();
+        
+                curl_setopt_array($curl, array(
+                    CURLOPT_URL => 'https://api-preprod.phonepe.com/apis/pg-sandbox/pg/v1/pay',
+                    CURLOPT_RETURNTRANSFER => true,
+                    CURLOPT_ENCODING => '',
+                    CURLOPT_MAXREDIRS => 10,
+                    CURLOPT_TIMEOUT => 0,
+                    CURLOPT_FOLLOWLOCATION => false,
+                    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                    CURLOPT_CUSTOMREQUEST => 'POST',
+                    CURLOPT_POSTFIELDS => json_encode(['request' => $encode]),
+                    CURLOPT_HTTPHEADER => array(
+                        'Content-Type: application/json',
+                        'X-VERIFY: ' . $finalXHeader
+                    ),
+                ));
+        
+                $response = curl_exec($curl);
+        
+                if (curl_errno($curl)) {
+                    $error = curl_error($curl);
+                    curl_close($curl);
+                    return response()->json(['error' => $error], 500);
+                }
+                curl_close($curl);
+        
+                  $rData = json_decode($response,true);
+                $redirect_url = $rData['data']['instrumentResponse']['redirectInfo']['url'];
+            
+
+                // $production_url= env('APP_URL').'pay-u-money-view/'.$rowTempTransData->temp_trans_order_id;
+                return response()->json(['status' => 'success','message' => 'Order created successfully','redirect_url' => $redirect_url],200);
             }else{
                 return response()->json(['status' => 'error','message' => 'Order Did not create. Please try again'],200);   
             }
